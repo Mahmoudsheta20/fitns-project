@@ -6,6 +6,34 @@
     margin: 0;
 }
 
+::-webkit-scrollbar-track-piece {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #171819;
+    width: 15px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d8cece6b;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: red;
+    transition: .3s;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: black;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -24,6 +52,11 @@ ul {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+
+i {
+    color: white;
+    font-size: 24px;
 }
 
 i:hover {
@@ -94,13 +127,7 @@ header .container .logo:hover {
     color: red;
 }
 
-@media (max-width: 992px) {
-    nav {
-        display: none;
-    }
-}
-
-nav {}
+@media (max-width: 992px) {}
 
 header .container nav .navbar-nav {
     position: absolute;
@@ -109,10 +136,44 @@ header .container nav .navbar-nav {
     display: flex;
 }
 
+header .container nav .navbar-nav .plan {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    display: flex;
+}
+
 @media (max-width: 992px) {
     header .container nav .navbar-nav {
         display: block;
     }
+}
+
+@media (max-width: 992px) {
+    header .container nav .navbar-nav li {
+        padding: 10px;
+        align-items: center
+    }
+    header .container nav .navbar-nav {
+        display: none;
+    }
+    header .container nav .plan {
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        /* display: flex; */
+        text-align: center;
+        display: block;
+        background-color: black
+    }
+    .toggle-menu:hover header .container nav .navbar-nav {
+        display: block;
+    }
+}
+
+.toggle-menu:hover header .container nav .navbar-nav {
+    display: block;
 }
 
 header .container nav .navbar-nav li {
@@ -131,16 +192,13 @@ header .container nav .navbar-nav li a {
     font-weight: bold;
 }
 
-header .container nav .navbar-nav li a:hover {
+header .container nav .navbar-nav li :hover {
     color: red;
 }
 
 @media (max-width: 992px) {
-    header .container nav .navbar-nav {
-        position: absolute;
-        top: 91px;
-        left: 50%;
-        color: red;
+    header .container nav .nav-icon {
+        display: none;
     }
 }
 
@@ -149,25 +207,24 @@ header .container nav .navbar-nav li a:hover {
         padding: 0;
         align-items: center;
         text-decoration: none;
-        margin-top: 18px;
-        margin-left: 13px;
+        margin-bottom: 10px;
     }
 }
 
 @media (max-width: 992px) {
-    header .container nav .navbar-nav li a {
-        color: red;
-    }
+    header .container nav .navbar-nav li a {}
 }
 
-header .container nav .nav-icon {
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    right: 21px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+@media (min-width: 992px) {
+    header .container nav .nav-icon {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        right: 21px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
 }
 
 header .container nav .nav-icon li {
@@ -193,14 +250,15 @@ header .container nav .nav-icon li a {
     font-size: 25px;
 }
 
-.menu:hover+.navbar-nav {
+
+/* .menu:hover+.navbar-nav {
     position: absolute;
     top: 0%;
     left: 50%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+flex-direction: column;
+    justify-content: center;    
+} */
 
 @media (max-width: 992px) {
     .menu {
@@ -210,6 +268,16 @@ header .container nav .nav-icon li a {
 
 .menu:hover nav {
     display: block;
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000099;
+    width: 100%;
+    height: 100%;
 }
 
 .landing {
@@ -234,16 +302,6 @@ header .container nav .nav-icon li a {
     .landing .container {
         width: 100%;
     }
-}
-
-.landing::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 70%);
 }
 
 .landing .container .row .col h6 {
@@ -583,8 +641,6 @@ header .container nav .nav-icon li a {
     padding-bottom: 100px;
 }
 
-.us .container {}
-
 .us .container .maine-heding {
     text-align: center;
     padding: 30px;
@@ -618,8 +674,6 @@ header .container nav .nav-icon li a {
         display: flex;
     }
 }
-
-.class-thumb {}
 
 
 /* .us .container .conitent {
@@ -754,9 +808,12 @@ header .container nav .nav-icon li a {
     border: 1px solid #212122;
 }
 
-.tabel .container table {
+.tabel .container .table-bordered {
+    overflow: auto;
+}
+
+.tabel .container .table-bordered .table-bordered2 {
     border-collapse: collapse;
-    width: 100%;
 }
 
 .tabel .container .tbody tr td span {
@@ -807,8 +864,6 @@ header .container nav .nav-icon li a {
     }
 }
 
-.col-md-6 {}
-
 .col-md-6 input {
     padding: 10px;
     width: 85%;
@@ -849,8 +904,6 @@ header .container nav .nav-icon li a {
 .col-md-6 button[type="submit"]:hover {
     background-color: red;
 }
-
-.col-12 {}
 
 .col-12 h2 {
     font-size: 38px;
