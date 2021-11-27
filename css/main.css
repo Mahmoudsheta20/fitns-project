@@ -64,6 +64,10 @@ i:hover {
     transition: .6s;
 }
 
+a {
+    color: black;
+}
+
 a:hover {
     color: red;
     transition: .6s;
@@ -130,10 +134,20 @@ header .container .logo:hover {
 @media (max-width: 992px) {}
 
 header .container nav .navbar-nav {
-    position: absolute;
-    top: 0%;
-    left: 33%;
     display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header .container .nav-icon {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width:991px) {
+    header .container .nav-icon {
+        display: none;
+    }
 }
 
 header .container nav .navbar-nav .plan {
@@ -177,11 +191,9 @@ header .container nav .navbar-nav .plan {
 }
 
 header .container nav .navbar-nav li {
-    padding: 15px;
     align-items: center;
     text-decoration: none;
-    margin-top: 18px;
-    margin-left: 13px;
+    display: flex;
 }
 
 header .container nav .navbar-nav li a {
@@ -204,15 +216,12 @@ header .container nav .navbar-nav li :hover {
 
 @media (max-width: 992px) {
     header .container nav .navbar-nav li {
-        padding: 0;
+        padding: 20px 0;
         align-items: center;
         text-decoration: none;
         margin-bottom: 10px;
+        display: block;
     }
-}
-
-@media (max-width: 992px) {
-    header .container nav .navbar-nav li a {}
 }
 
 @media (min-width: 992px) {
@@ -592,14 +601,14 @@ flex-direction: column;
     font-size: 21px;
 }
 
-.team-info ul li a {
+.team-info ul li a i {
     color: #666262;
+    transition: .5s;
 }
 
-
-/* .team-info ul li a:hover {
+.team-info ul li a:hover i {
     color: red;
-} */
+}
 
 @media (max-width: 992px) {
     .ml-auto img {
